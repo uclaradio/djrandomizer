@@ -4,7 +4,7 @@ import radioBlack from './images/radioblack.png';
 import React, { useState } from 'react';
 
 const App = () => {
-  const [name, setName] = useState("Click on the button to generate your DJ Name!");
+  const [name, setName] = useState("Click on the button to generate your DJ Name!!!");
   const user = "DJ ";
 
   const generateRandomName = () => {

@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+@font-face {
+  font-family: 'Space Grotesk';
+  src: local('Space Grotesk'), url('./fonts/SpaceGrotesk-Regular.otf') format('otf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -9,7 +17,8 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    /* animation: App-logo-spin infinite 20s linear; */
+    filter: invert(100%);
   }
 }
 
@@ -26,6 +35,7 @@
 
 
 
+
 .App-link {
   color: #61dafb;
 }
@@ -37,4 +47,33 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.header-container {
+  background-color: #282c34; /* Background color of the box */
+  padding: 20px; /* Padding around the text */
+  display: inline-block; /* Ensures the container fits the content width */
+  border-radius: 5px; /* Optional: adds rounded corners to the box */
+  margin-top: 20px; /* Adds some space above the header container */
+}
+
+.App-title {
+  color: #f5b3f1; /* Text color */
+  font-size: 5.0rem; /* Font size */
+  position: relative; /* Required for positioning the underline */
+  font-family: 'Space Grotesk', sans-serif; /* Custom font */
+}
+
+.underline {
+  display: block; /* Makes the span a block-level element */
+  height: 2px; /* Height of the underline */
+  background-color: #f5b3f1; /* Color of the underline */
+  width: 100%; /* Ensures the underline spans the entire width of the text */
+  position: absolute; /* Positions the underline relative to the title */
+  bottom: -10px; /* Adjusts the position of the underline */
+  left: 0;
 }

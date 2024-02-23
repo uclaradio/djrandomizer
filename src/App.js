@@ -55,20 +55,40 @@ function App() {
     }
   }
 
+  const buttonStyle = {
+    backgroundColor: '#f5b3f1', // pink background
+    border: 'none',
+    color: 'dark gray',
+    padding: '15px 32px',
+    textAlign: 'center',
+    textDecoration: 'none',
+    display: 'inline-block',
+    fontSize: '16px',
+    margin: '4px 2px',
+    cursor: 'pointer',
+    borderRadius: '8px', // Rounded corners
+  };  
+
   return (
     <div className="App">
       <header className="App-header">
+        <div className="header-container">
+          <h1 className="App-title">DJ Name Generator<span className="underline"></span></h1>
+        </div>
+
+        {/* <img src={radioBlack} className="App-logo" alt="Radio Black" /> Logo added */}
         <p>YOUR DJ NAME IS: </p>
-        <button onClick={buttonClick} disabled={loading}>GET ME A NAME</button>
+        <button onClick={buttonClick} disabled={loading} style={buttonStyle}>{loading ? 'Loading...' : 'GET ME A NAME'}</button>
         {error && <p>Error: {error.message}</p>}
         <h1>
           {Name}
-          {/* Uncomment the Typewriter component when it's ready to be used */}
-          {/* <Typewriter key={keyProp} text={Name} delay={100} /> */}
+          {/* You can uncomment the Typewriter component and use it once you ensure it's implemented correctly */}
+          {/*<Typewriter key={keyProp} text={`${adj} ${noun}`} delay={100} />*/}
         </h1>
       </header>
     </div>
   );
 }
+
 
 export default App;

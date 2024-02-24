@@ -1,5 +1,5 @@
 import './App.css';
-import Typewriter from "./Typewriter";
+import radioBlack from "./radioblack.png"; // Import the radio logo
 import React, { useState } from 'react';
 
 function App() {
@@ -7,12 +7,6 @@ function App() {
   const [Name, setName] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [keyProp, setTypewriterKey] = useState(0);
-
-  // RESETS THE TYPEWRITER 
-  const resetTypewriter = () => {
-    setTypewriterKey(keyProp => keyProp + 1);
-  };
 
   async function fetchName() {
     setLoading(true);
@@ -24,7 +18,6 @@ function App() {
       let data2 = await response.json();
 
       setName(`DJ ${data1[0].word} ${data2[0].word}`);
-      resetTypewriter();
     } catch (error) {
       setError(error);
     }
@@ -38,7 +31,6 @@ function App() {
       const lines = text.split(' ');
       const randomLine = lines[Math.floor(Math.random() * lines.length)];
       setName(`DJ ${randomLine}`);
-      resetTypewriter();
     } catch (error) {
       console.error('Error fetching the names file:', error);
       setError(error);
@@ -76,14 +68,12 @@ function App() {
           <h1 className="App-title">DJ Name Generator<span className="underline"></span></h1>
         </div>
 
-        {/* <img src={radioBlack} className="App-logo" alt="Radio Black" /> Logo added */}
+        {<img src={radioBlack} className="App-logo" alt="Radio Black" />}
         <p>YOUR DJ NAME IS: </p>
         <button onClick={buttonClick} disabled={loading} style={buttonStyle}>{loading ? 'Loading...' : 'GET ME A NAME'}</button>
         {error && <p>Error: {error.message}</p>}
         <h1>
           {Name}
-          {/* You can uncomment the Typewriter component and use it once you ensure it's implemented correctly */}
-          {/*<Typewriter key={keyProp} text={`${adj} ${noun}`} delay={100} />*/}
         </h1>
       </header>
     </div>

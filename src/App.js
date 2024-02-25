@@ -11,10 +11,10 @@ function App() {
   async function fetchName() {
     setLoading(true);
     try {
-      let response = await fetch('http://cat.epicgamer.org:3000/word/adjective/');
+      let response = await fetch('/api/adjective');
       let data1 = await response.json();
-
-      response = await fetch('http://cat.epicgamer.org:3000/word/noun/');
+      console.log(data1);  // Log the raw response
+      response = await fetch('/api/noun');
       let data2 = await response.json();
 
       setName(`DJ ${data1[0].word} ${data2[0].word}`);

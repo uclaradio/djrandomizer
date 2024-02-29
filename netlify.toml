@@ -1,11 +1,11 @@
 [[redirects]]
   from = "/api/adjective"
-  to = "35.91.199.116:3000/word/adjective/"
+  to = "http://cat.epicgamer.org:3000/word/adjective/"
   status = 200
   force = true
 
 [[redirects]]
   from = "/api/noun"
-  to = "35.91.199.116:3000/word/noun/"
+  to = "http://cat.epicgamer.org:3000/word/noun/"
   status = 200
   force = true
